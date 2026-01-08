@@ -7,19 +7,102 @@ COLOR PALETTE
 #e090ad dark pink
 */
 
-$dark-green: #00312e;
-$light-green: #066255;
-$turquoise: #039f9b;
-$light-pink: #fad3d8;
-$dark-pink: #e090ad;
+/* ===== Variables ===== */
+$bg: #0b0c10;
+$surface: #11131a;
+$text: #e8eaf0;
+$muted: #a9b0c3;
+$primary: #7c5cff;
+$border: rgba(255, 255, 255, 0.08);
 
+$radius: 14px;
+$maxw: 980px;
+
+/* ===== Reset mínimo ===== */
+* { box-sizing: border-box; }
+html, body { height: 100%; }
 body {
   margin: 0;
-  font-family: system-ui, sans-serif;
-  background-color: $light-pink;
-  color: $dark-green;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: $bg;
+  color: $text;
+  line-height: 1.5;
 }
 
-h1 {
-  color: $dark-green;
+a { color: inherit; text-decoration: none; }
+a:focus-visible { outline: 2px solid $primary; outline-offset: 3px; }
+
+/* ===== Layout ===== */
+.container {
+  width: min(100% - 2rem, $maxw);
+  margin-inline: auto;
 }
+
+.main {
+  padding: 2rem 0 3rem;
+}
+
+.page-title {
+  margin: 0 0 1rem;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+}
+
+/* ===== Header / Nav ===== */
+.site-header {
+  position: sticky;
+  top: 0;
+  background: rgba(17, 19, 26, 0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid $border;
+  z-index: 10;
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.9rem 0;
+}
+
+.brand {
+  font-weight: 800;
+  letter-spacing: 0.3px;
+}
+
+.nav {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.nav__link {
+  padding: 0.45rem 0.75rem;
+  border-radius: 999px;
+  color: $muted;
+  transition: background 120ms ease, color 120ms ease;
+
+  &:hover {
+    background: rgba(124, 92, 255, 0.12);
+    color: $text;
+  }
+
+  &.is-active {
+    background: rgba(124, 92, 255, 0.2);
+    color: $text;
+    border: 1px solid rgba(124, 92, 255, 0.35);
+  }
+}
+
+/* ===== Footer ===== */
+.site-footer {
+  border-top: 1px solid $border;
+  padding: 1.25rem 0;
+  color: $muted;
+}
+
+.footer__inner {
+  display: flex;
+  justify-content: center;
+}
+

@@ -1,19 +1,38 @@
-<!DOCTYPE html>
+<!doctype html>
+
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ProjectP</title>
+  <title>ProjectP · Inicio</title>
 
-  <!-- CSS generado desde SCSS -->
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
-    <body>
-    <h1>Index</h1>
-    <h2>This is the main page</h2>
-    <p><a href="index.html">Index</a></p>
-    <p><a href="gallery.html">Gallery</a></p>
-    <p><a href="notes.html">Notes</a></p>
 
-    </body>
+<body>
+  <header class="site-header">
+    <div class="container header__inner">
+      <a class="brand" href="index.html" aria-label="Ir a inicio">ProjectP</a>
+
+      <nav class="nav" aria-label="Navegación principal">
+        <a class="nav__link is-active" href="index.html">Inicio</a>
+        <a class="nav__link" href="gallery.html">Galería</a>
+        <a class="nav__link" href="notes.html">Notas</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container main">
+    <h1 class="page-title">Inicio</h1>
+    <p>Esta es la página principal.</p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer__inner">
+      <small>© <span id="year"></span> ProjectP · Uso privado</small>
+    </div>
+  </footer>
+
+  <script src="js/index.js" defer></script>
+</body>
 </html>
