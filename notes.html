@@ -10,16 +10,27 @@
 
 <body>
   <header class="site-header">
-    <div class="container header__inner">
-      <a class="brand" href="index.html" aria-label="Ir a inicio">ProjectP</a>
+  <div class="container header__inner">
+    <a class="brand" href="index.html" aria-label="Ir a inicio">ProjectP</a>
 
-      <nav class="nav" aria-label="Navegación principal">
-        <a class="nav__link" href="index.html">Inicio</a>
-        <a class="nav__link" href="gallery.html">Galería</a>
-        <a class="nav__link is-active" href="notes.html">Notas</a>
-      </nav>
-    </div>
-  </header>
+    <!-- Botón hamburguesa (solo móvil) -->
+    <button
+      class="nav-toggle"
+      type="button"
+      aria-label="Abrir menú"
+      aria-controls="primary-nav"
+      aria-expanded="false"
+    >
+      ☰
+    </button>
+
+    <nav class="nav" id="primary-nav" aria-label="Navegación principal" data-nav>
+      <a class="nav__link" href="index.html">Inicio</a>
+      <a class="nav__link" href="gallery.html">Galería</a>
+      <a class="nav__link" href="notes.html">Notas</a>
+    </nav>
+  </div>
+</header>
 
   <main class="container main">
     <h1 class="page-title">Notas</h1>
@@ -32,6 +43,6 @@
     </div>
   </footer>
 
-  <script src="js/notes.js" defer></script>
+  <script type="module" src="js/notes.js"></script>
 </body>
 </html>

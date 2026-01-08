@@ -38,9 +38,7 @@ a:focus-visible { outline: 2px solid $primary; outline-offset: 3px; }
   margin-inline: auto;
 }
 
-.main {
-  padding: 2rem 0 3rem;
-}
+.main { padding: 2rem 0 3rem; }
 
 .page-title {
   margin: 0 0 1rem;
@@ -70,6 +68,23 @@ a:focus-visible { outline: 2px solid $primary; outline-offset: 3px; }
   letter-spacing: 0.3px;
 }
 
+/* Botón hamburguesa */
+.nav-toggle {
+  display: none; /* visible solo en móvil */
+  border: 1px solid $border;
+  background: rgba(255, 255, 255, 0.06);
+  color: $text;
+  border-radius: 999px;
+  padding: 0.45rem 0.75rem;
+  font-size: 1rem;
+  cursor: pointer;
+
+  &:hover {
+    background: rgba(124, 92, 255, 0.12);
+    border-color: rgba(124, 92, 255, 0.35);
+  }
+}
+
 .nav {
   display: flex;
   gap: 0.4rem;
@@ -80,7 +95,7 @@ a:focus-visible { outline: 2px solid $primary; outline-offset: 3px; }
   padding: 0.45rem 0.75rem;
   border-radius: 999px;
   color: $muted;
-  transition: background 120ms ease, color 120ms ease;
+  transition: background 120ms ease, color 120ms ease, border 120ms ease;
 
   &:hover {
     background: rgba(124, 92, 255, 0.12);
@@ -94,6 +109,36 @@ a:focus-visible { outline: 2px solid $primary; outline-offset: 3px; }
   }
 }
 
+/* ===== Móvil: nav colapsable ===== */
+@media (max-width: 720px) {
+  .nav-toggle { display: inline-flex; align-items: center; gap: .5rem; }
+
+  .nav {
+    /* colapsado por defecto */
+    display: none;
+    position: absolute;
+    top: 64px; /* aprox altura header */
+    right: 1rem;
+    left: 1rem;
+
+    background: rgba(17, 19, 26, 0.96);
+    border: 1px solid $border;
+    border-radius: $radius;
+    padding: 0.75rem;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .nav.is-open { display: flex; }
+
+  .nav__link {
+    border-radius: 12px;
+    padding: 0.7rem 0.8rem;
+  }
+
+  .header__inner { position: relative; }
+}
+
 /* ===== Footer ===== */
 .site-footer {
   border-top: 1px solid $border;
@@ -101,8 +146,4 @@ a:focus-visible { outline: 2px solid $primary; outline-offset: 3px; }
   color: $muted;
 }
 
-.footer__inner {
-  display: flex;
-  justify-content: center;
-}
-
+.footer__inner { display: flex; justify-content: center; }

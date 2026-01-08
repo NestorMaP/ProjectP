@@ -1,37 +1,53 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ProjectP · Galería</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ProjectP · Galería</title>
 
-  <link rel="stylesheet" href="css/styles.css" />
-</head>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
 
-<body>
-  <header class="site-header">
-    <div class="container header__inner">
-      <a class="brand" href="index.html" aria-label="Ir a inicio">ProjectP</a>
+  <body>
+    <header class="site-header">
+      <div class="container header__inner">
+        <a class="brand" href="index.html" aria-label="Ir a inicio">ProjectP</a>
 
-      <nav class="nav" aria-label="Navegación principal">
-        <a class="nav__link" href="index.html">Inicio</a>
-        <a class="nav__link is-active" href="gallery.html">Galería</a>
-        <a class="nav__link" href="notes.html">Notas</a>
-      </nav>
-    </div>
-  </header>
+        <!-- Botón hamburguesa (solo móvil) -->
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-label="Abrir menú"
+          aria-controls="primary-nav"
+          aria-expanded="false"
+        >
+          ☰
+        </button>
 
-  <main class="container main">
-    <h1 class="page-title">Galería</h1>
-    <p>Aquí irá tu contenido.</p>
-  </main>
+        <nav
+          class="nav"
+          id="primary-nav"
+          aria-label="Navegación principal"
+          data-nav
+        >
+          <a class="nav__link" href="index.html">Inicio</a>
+          <a class="nav__link" href="gallery.html">Galería</a>
+          <a class="nav__link" href="notes.html">Notas</a>
+        </nav>
+      </div>
+    </header>
 
-  <footer class="site-footer">
-    <div class="container footer__inner">
-      <small>© <span id="year"></span> ProjectP · Uso privado</small>
-    </div>
-  </footer>
+    <main class="container main">
+      <h1 class="page-title">Galería</h1>
+      <p>Aquí irá tu contenido.</p>
+    </main>
 
-  <script src="js/gallery.js" defer></script>
-</body>
+    <footer class="site-footer">
+      <div class="container footer__inner">
+        <small>© <span id="year"></span> ProjectP · Uso privado</small>
+      </div>
+    </footer>
+
+    <script type="module" src="js/gallery.js"></script>
+  </body>
 </html>

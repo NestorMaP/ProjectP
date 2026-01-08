@@ -1,6 +1,8 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const year = document.getElementById("year");
-  if (year) year.textContent = String(new Date().getFullYear());
+import { initCommonUI } from "./common.js";
 
+document.addEventListener("DOMContentLoaded", () => {
+  initCommonUI();
+
+  // Código específico de Gallery
   console.log("Gallery loaded");
 });
